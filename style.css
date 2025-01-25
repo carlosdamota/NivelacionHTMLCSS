@@ -1,5 +1,66 @@
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    width: 100%;
+    & figure > img {
+        width: 100%;
+    }
+}
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 article{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    & figure > img{
+        width: 100%;
+    }
+}
+@media screen and (min-width:476px){
+    body {
+        background-color:  red;
+    }
+    .flex {
+        flex-flow: wrap;
+    }
+    article{
+        width: 50%;
+    }
+    
+}
+@media screen and (min-width:768px) {
+    body {
+        background-color: green;
+    }
+    article{
+        width: 25%;
+        & figure > img{
+            width: 100%;
+        }
+    }
 
 }
+
+@media screen and (min-width:1024px) {
+    body {
+        background-color: yellowgreen;
+    }
+    .flex w
+    article{
+        width: 20%;
+        & figure > img{
+            width: 100%;
+        }
+    }
+
+}
+
