@@ -1,66 +1,116 @@
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero {
+  width: 100%;
+  & figure > img {
     width: 100%;
-    & figure > img {
-        width: 100%;
-    }
+  }
 }
 .flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-article{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  & figure > img {
     width: 100%;
-    & figure > img{
-        width: 100%;
+  }
+}
+.display {
+    & strong {
+        display: block;
+        border: 1px solid black;
+    }
+    & h1 {
+        border: 5px solid red
     }
 }
-@media screen and (min-width:476px){
-    body {
-        background-color:  red;
-    }
-    .flex {
-        flex-flow: wrap;
-    }
-    article{
-        width: 50%;
-    }
-    
-}
-@media screen and (min-width:768px) {
-    body {
-        background-color: green;
-    }
-    article{
-        width: 25%;
-        & figure > img{
-            width: 100%;
+
+.position  {
+    & figure {
+        width: 200px;
+        & img {
+            width: 200px;
+        }
+        .absolute{
+            animation-name: apple;
+            animation-duration: 2s;
+            animation-fill-mode: backwards;
+            animation-iteration-count: infinite;
         }
     }
-
 }
 
-@media screen and (min-width:1024px) {
-    body {
-        background-color: yellowgreen;
+@keyframes apple {
+    0%{
+        transform: translate(0px, 0px);
     }
-    .flex w
-    article{
-        width: 20%;
-        & figure > img{
-            width: 100%;
-        }
+    10%{
+        transform: rotate(90deg);
+        
     }
-
+    11%{
+        transform: translate(10px, 10px);
+    }
+    20%{
+        transform: rotate(180deg);
+    }
+    21%{
+        transform: translate(20px, 20px);
+    }
+    50%{
+        transform: rotate(270deg);
+    }
+    51%{
+        transform: translate(30px, 30px);
+    }
+    99%{
+        transform: translate(50px, 50px);
+    }
+    100%{
+        transform: rotate(1080deg);
+    }
 }
-
+@media screen and (min-width: 476px) {
+  body {
+    background-color: red;
+  }
+  .flex {
+    flex-flow: wrap;
+  }
+  article {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    background-color: green;
+  }
+  article {
+    width: 25%;
+    & figure > img {
+      width: 100%;
+    }
+  }
+}
+/* min-width lo indicamos cuando queremos qe nuestro  CSS se aplique a partir de los pixeles indicados hacia adelante, a la inversa seria el max-width */
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: yellowgreen;
+  }
+  .flex w article {
+    width: 20%;
+    & figure > img {
+      width: 100%;
+    }
+  }
+}
